@@ -26,43 +26,47 @@ also used to build an interactive Power BI dashboard.
 
 **Monthly revenue trend**
 
-![Monthly revenue trend](images/01_monthly_revenue_trend.png)
+![Monthly revenue trend](01_monthly_revenue_trend.png)
 
 **Revenue by category**
 
-![Revenue by category](images/02_revenue_by_category.png)
+![Revenue by category](02_revenue_by_category.png)
 
 **Revenue share by region**
 
-![Revenue by region](images/03_revenue_by_region.png)
+![Revenue by region](03_revenue_by_region.png)
 
 **Top 10 products by revenue**
 
-![Top products](images/04_top_products.png)
+![Top products](04_top_products.png)
 
 **Customer type: one-time vs repeat**
 
-![Customer segments](images/05_customer_segments.png)
+![Customer segments](05_customer_segments.png)
 
 **Orders by payment method**
 
-![Payment methods](images/06_payment_methods.png)
+![Payment methods](06_payment_methods.png)
 
 ## Tech stack
 
 - Python (Pandas, NumPy) — data cleaning & aggregation
 - Matplotlib — visualization
-- Jupyter Notebook — analysis walkthrough (see `notebook/ecommerce_sales_analysis.ipynb`)
+- Jupyter Notebook — analysis walkthrough (see `ecommerce_sales_analysis.ipynb`)
 
 ## Project structure
 
 ```
-├── data/
-│   └── ecommerce_sales_data.csv     # raw order-level dataset
-├── notebook/
-│   └── ecommerce_sales_analysis.ipynb   # full analysis with outputs
-├── images/                          # exported charts
-├── analysis.py                      # script version of the analysis
+├── ecommerce_sales_data.csv          # raw order-level dataset
+├── ecommerce_sales_analysis.ipynb    # full analysis with outputs
+├── analysis.py                       # script version of the analysis
+├── generate_data.py                  # generates the sample dataset
+├── 01_monthly_revenue_trend.png      # exported charts
+├── 02_revenue_by_category.png
+├── 03_revenue_by_region.png
+├── 04_top_products.png
+├── 05_customer_segments.png
+├── 06_payment_methods.png
 └── README.md
 ```
 
@@ -73,7 +77,7 @@ pip install pandas numpy matplotlib
 python analysis.py
 ```
 
-This regenerates all charts into `/images` and prints the key metrics to the console.
+This regenerates all charts and prints the key metrics to the console.
 
 ---
 *Part of the Data Analytics with Python & Power BI internship, EduSkills Academy.*

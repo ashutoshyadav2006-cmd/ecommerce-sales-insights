@@ -22,7 +22,7 @@ ACCENT2 = "#F2A541"
 # ---------------------------------------------------------------
 # 1. Load data
 # ---------------------------------------------------------------
-df = pd.read_csv("data/ecommerce_sales_data.csv", parse_dates=["order_date"])
+df = pd.read_csv("ecommerce_sales_data.csv", parse_dates=["order_date"])
 print("Raw shape:", df.shape)
 
 # ---------------------------------------------------------------
@@ -75,7 +75,7 @@ ax.set_ylabel("Revenue (Rs)")
 ax.yaxis.set_major_formatter(mticker.FuncFormatter(lambda x, _: f"{x/1000:.0f}k"))
 plt.xticks(rotation=45, ha="right")
 plt.tight_layout()
-plt.savefig("images/01_monthly_revenue_trend.png")
+plt.savefig("01_monthly_revenue_trend.png")
 plt.close()
 
 # ---------------------------------------------------------------
@@ -92,7 +92,7 @@ for bar in bars:
     w = bar.get_width()
     ax.text(w, bar.get_y() + bar.get_height()/2, f" {w/1000:.0f}k", va="center", fontsize=9)
 plt.tight_layout()
-plt.savefig("images/02_revenue_by_category.png")
+plt.savefig("02_revenue_by_category.png")
 plt.close()
 
 # ---------------------------------------------------------------
@@ -106,7 +106,7 @@ ax.pie(region_rev.values, labels=region_rev.index, autopct="%1.0f%%",
        colors=colors, startangle=90, wedgeprops={"edgecolor": "white", "linewidth": 1.5})
 ax.set_title("Revenue Share by Region", fontsize=13, fontweight="bold")
 plt.tight_layout()
-plt.savefig("images/03_revenue_by_region.png")
+plt.savefig("03_revenue_by_region.png")
 plt.close()
 
 # ---------------------------------------------------------------
@@ -120,7 +120,7 @@ ax.set_title("Top 10 Products by Revenue", fontsize=13, fontweight="bold")
 ax.set_xlabel("Revenue (Rs)")
 ax.xaxis.set_major_formatter(mticker.FuncFormatter(lambda x, _: f"{x/1000:.0f}k"))
 plt.tight_layout()
-plt.savefig("images/04_top_products.png")
+plt.savefig("04_top_products.png")
 plt.close()
 
 # ---------------------------------------------------------------
@@ -136,7 +136,7 @@ ax.pie([new_customers, repeat_customers], labels=["One-time", "Repeat"],
        wedgeprops={"edgecolor": "white", "linewidth": 1.5})
 ax.set_title("Customer Type: One-time vs Repeat", fontsize=13, fontweight="bold")
 plt.tight_layout()
-plt.savefig("images/05_customer_segments.png")
+plt.savefig("05_customer_segments.png")
 plt.close()
 
 # ---------------------------------------------------------------
@@ -150,10 +150,10 @@ ax.set_title("Orders by Payment Method", fontsize=13, fontweight="bold")
 ax.set_ylabel("Number of Orders")
 plt.xticks(rotation=20, ha="right")
 plt.tight_layout()
-plt.savefig("images/06_payment_methods.png")
+plt.savefig("06_payment_methods.png")
 plt.close()
 
-print("\nAll charts saved to /images")
+print("\nAll charts saved.")
 
 # ---------------------------------------------------------------
 # 10. Save a small summary for the README
